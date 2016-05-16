@@ -8,12 +8,12 @@ module Nuvi
     end
   end
   
-  def xml_to_redis(redis, xml_path)
+  def xml_to_redis(redis,xml_path)
     Dir.foreach(xml_path) do |file|
       if file =~ (/\w*.xml/)
         f=File.open("#{xml_path}/#{file}", "r")
         data=f.read
-        redis.lpush "mylist", data
+        redis.lpush "NEWS_XML", data
       end
     end
   end
