@@ -44,6 +44,8 @@ class Downxml
         end
       end
       update_latest
+    else
+      p "No update available"
     end
   end
   
